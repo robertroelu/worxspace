@@ -65,7 +65,7 @@ export const swipers = () => {
     spaceBetween: 24,
     initialSlide: 1,
     centeredSlides: true,
-    centeredSlidesBounds: true,
+    // centeredSlidesBounds: true,
     breakpoints: {
       320: {
         slidesPerView: 1,
