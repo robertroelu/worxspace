@@ -4,11 +4,12 @@ import { gsap } from 'gsap';
 export const loadElement = async (
   nestTarget: HTMLElement,
   collectionSlug: string,
-  collectionItemSlug: string,
+  // collectionItemSlug: string,
   collectionId: string
 ) => {
   // source of the page that has the collection
-  const pageSource = `${collectionSlug}/${collectionItemSlug}`;
+  // const pageSource = `${collectionSlug}/${collectionItemSlug}`;
+  const pageSource = `utility/${collectionSlug}`;
 
   // fetching the page and getting the text
   const pageData = await fetch(pageSource);
@@ -22,9 +23,14 @@ export const loadElement = async (
   const selector = `#${collectionId}`;
 
   // fetching all the items in the collection wrapper using the getCollectionElements util
-  const wrapper = (await getCollectionElements(selector, 'wrapper', doc)) as HTMLElement;
+  // const wrapper = (await getCollectionElements(selector, 'wrapper', doc)) as HTMLElement;
+  const wrapper = getCollectionElements(selector, 'items', doc) as HTMLElement[];
 
-  nestTarget.append(wrapper);
+  // nestTarget.append(wrapper);
+
+  wrapper.forEach((el) => {
+    nestTarget.append(el);
+  });
 
   gsap.fromTo(
     nestTarget,
