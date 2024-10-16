@@ -7,7 +7,7 @@ import { scrolldisable } from '@finsweet/attributes-scrolldisable/';
 // import {} from '@finsweet/attributes-socialshare/';
 
 //Modal
-import { modal } from '$modal/modal';
+// import { modal } from '$modal/modal';
 
 //Nest
 import { nestedElement } from './nest/nestElement';
@@ -16,7 +16,7 @@ import { nestedElement } from './nest/nestElement';
 import { swipers } from '$utils/swipers';
 import { darkModeSwitch } from '$utils/darkModeSwitch';
 import { refreshWindow } from '$utils/refreshWindow';
-import { animationOrange } from '$utils/animationOrange';
+// import { animationOrange } from '$utils/animationOrange';
 import { mobileNav } from '$utils/mobileNav';
 // import { consoleClear } from '$utils/consoleClear';
 // import { actualYear } from '$utils/actualYear';
