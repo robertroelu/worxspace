@@ -36,4 +36,11 @@ window.Webflow.push(() => {
   darkModeSwitch();
   // animationOrange();
   mobileNav();
+
+  const el = document.querySelector('#home-partners') as HTMLElement;
+  console.log(el);
+  el.style.display = 'none';
+  setTimeout(() => {
+    el.style.display = 'block';
+  }, 50);
 });
