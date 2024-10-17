@@ -9,7 +9,8 @@ export const darkModeSwitch = () => {
 
   // Color Setup Light
   // Body
-  const bgc1_body: string = '#fff';
+  const bgc1_body = '#fff';
+  const pattern_bgc1 = '#eceFF1';
 
   // Paggination
   const bgc1_pagination = '#DEE2E6';
@@ -60,6 +61,9 @@ export const darkModeSwitch = () => {
   // Body
   const bgc1_body_mode2: string = getComputedStyle(document.documentElement).getPropertyValue(
     '--mode-2--color-body--bgc1'
+  );
+  const pattern_bgc1_mode2: string = getComputedStyle(document.documentElement).getPropertyValue(
+    '--mode-2--color-body--pattern-bgc1'
   );
 
   // Paggination
@@ -191,6 +195,10 @@ export const darkModeSwitch = () => {
 
     gsap.to('html', {
       '--mode-1--color-body--bgc1': bgc1_body_mode2,
+      duration: 0.3,
+    });
+    gsap.to('html', {
+      '--mode-1--color-body--pattern-bgc1': pattern_bgc1_mode2,
       duration: 0.3,
     });
 
@@ -353,6 +361,10 @@ export const darkModeSwitch = () => {
 
     gsap.to('html', {
       '--mode-1--color-body--bgc1': bgc1_body,
+      duration: 0.3,
+    });
+    gsap.to('html', {
+      '--mode-1--color-body--pattern-bgc1': pattern_bgc1,
       duration: 0.3,
     });
 
