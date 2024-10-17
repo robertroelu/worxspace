@@ -37,7 +37,7 @@ window.Webflow.push(() => {
   // animationOrange();
   mobileNav();
 
-  const el = document.querySelector('#home-partners') as HTMLElement;
+  const el = document.querySelector('#test') as HTMLElement;
   console.log(el);
   el.style.display = 'none';
   setTimeout(() => {
