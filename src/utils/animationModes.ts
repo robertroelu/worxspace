@@ -10,6 +10,9 @@ export function updateColors(newBackgroundColor: string, newFillColor: string) {
 }
 
 export const animationModes = () => {
+  const windowWidth = window.innerWidth;
+  if (windowWidth < 991) return;
+
   // Variables
   let pg: p5.Graphics;
   let canvasWidth: number;
