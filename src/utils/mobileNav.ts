@@ -6,4 +6,16 @@ export const mobileNav = () => {
       closeEl.click();
     });
   });
+
+  const openEl = document.querySelector('[open-mobile-menu]') as HTMLElement;
+  if (!openEl) return;
+
+  const navMobileEl = document.querySelector('.navbar_mobile-wrap') as HTMLElement;
+  if (!navMobileEl) return;
+
+  openEl.addEventListener('click', () => {
+    const innerHeight = window.innerHeight;
+
+    navMobileEl.style.height = `${innerHeight}px`;
+  });
 };
