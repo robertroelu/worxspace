@@ -16,8 +16,9 @@ import { nestedElement } from './nest/nestElement';
 import { swipers } from '$utils/swipers';
 import { darkModeSwitch } from '$utils/darkModeSwitch';
 import { refreshWindow } from '$utils/refreshWindow';
-// import { animationOrange } from '$utils/animationOrange';
+import { animationOrange } from '$utils/animationOrange';
 import { mobileNav } from '$utils/mobileNav';
+import { stickySection } from '$utils/stickySection';
 // import { consoleClear } from '$utils/consoleClear';
 // import { actualYear } from '$utils/actualYear';
 // import { typer } from '$utils/typer';
@@ -26,15 +27,23 @@ window.Webflow ||= [];
 window.Webflow.push(() => {
   // consoleClear();
   // actualYear();
-  nestedElement();
   linkblockedit();
   scrolldisable();
   refreshWindow();
   // modal();
   swipers();
   // typer();
-  darkModeSwitch();
-  // animationOrange();
   mobileNav();
-  // navHeight();
+
+  darkModeSwitch();
+
+  nestedElement()
+    .then(() => {
+      animationOrange();
+    })
+    .catch((error) => {
+      console.error('Error in nestedElement:', error);
+    });
+
+  stickySection();
 });
