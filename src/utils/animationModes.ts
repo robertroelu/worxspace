@@ -122,7 +122,7 @@ export const animationModes = () => {
     };
 
     //   Initialize P5.js sketch
-    new p5(sketch);
+    new p5(sketch, container);
   });
 
   // Dynamically resize canvas to fit the container
