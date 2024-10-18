@@ -18,6 +18,7 @@ export const swipers = () => {
     breakpoints: {
       320: {
         slidesPerView: 1.1,
+        spaceBetween: 10,
       },
       480: {
         slidesPerView: 1.2,
