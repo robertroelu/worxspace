@@ -1,10 +1,10 @@
 import 'swiper/css/bundle';
 
 import Swiper from 'swiper';
-import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
+import { Autoplay, EffectFade, Mousewheel, Pagination } from 'swiper/modules';
 
 export const swipers = () => {
-  const swiperModules = [Autoplay, EffectFade, Pagination];
+  const swiperModules = [Autoplay, EffectFade, Pagination, Mousewheel];
 
   const swiperEls = document.querySelectorAll('[swiper-option]') as NodeListOf<HTMLElement>;
   if (!swiperEls) return;
@@ -15,16 +15,22 @@ export const swipers = () => {
     slidesPerView: 2.3,
     allowTouchMove: true,
     spaceBetween: 24,
+    mousewheel: {
+      forceToAxis: true,
+    },
     breakpoints: {
       320: {
         slidesPerView: 1.1,
         spaceBetween: 10,
+        mousewheel: false,
       },
       480: {
         slidesPerView: 1.2,
+        mousewheel: false,
       },
       767: {
         slidesPerView: 2.1,
+        mousewheel: false,
       },
       991: {
         slidesPerView: 1.7,
@@ -67,19 +73,25 @@ export const swipers = () => {
     initialSlide: 1,
     centeredSlides: true,
     // centeredSlidesBounds: true,
+    mousewheel: {
+      forceToAxis: true,
+    },
     breakpoints: {
       320: {
         slidesPerView: 1,
         initialSlide: 0,
         centeredSlides: false,
         centeredSlidesBounds: false,
+        mousewheel: false,
       },
       480: {
         slidesPerView: 1,
         initialSlide: 0,
+        mousewheel: false,
       },
       767: {
         slidesPerView: 1.2,
+        mousewheel: false,
       },
       991: {
         slidesPerView: 1.7,
