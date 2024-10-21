@@ -20,13 +20,13 @@ import { animationOrange } from '$utils/animationOrange';
 import { mobileNav } from '$utils/mobileNav';
 import { stickySection } from '$utils/stickySection';
 // import { consoleClear } from '$utils/consoleClear';
-// import { actualYear } from '$utils/actualYear';
+import { actualYear } from '$utils/actualYear';
 // import { typer } from '$utils/typer';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
   // consoleClear();
-  // actualYear();
+  actualYear();
   linkblockedit();
   scrolldisable();
   refreshWindow();
