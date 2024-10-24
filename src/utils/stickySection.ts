@@ -5,7 +5,7 @@ export const stickySection = () => {
   const elScrollFrom = document.querySelectorAll('[scroll-to-partners]') as NodeListOf<HTMLElement>;
   if (!elScrollFrom) return;
 
-  const position = stickyEl.getBoundingClientRect().top + window.scrollY;
+  let position: number;
 
   elScrollFrom.forEach((el) => {
     el.addEventListener('click', () => {
@@ -27,6 +27,8 @@ export const stickySection = () => {
     if (diff < 0) {
       stickyEl.style.top = `${diff}px`;
     }
+
+    position = stickyEl.getBoundingClientRect().top + window.scrollY;
   }
 
   window.addEventListener('resize', () => {
