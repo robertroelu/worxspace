@@ -6,6 +6,7 @@ export const stickySection = () => {
   if (!elScrollFrom) return;
 
   let position: number;
+  // const document.querySelector('.section_home-partners')?.scrollHeight;
 
   elScrollFrom.forEach((el) => {
     el.addEventListener('click', () => {
@@ -17,6 +18,12 @@ export const stickySection = () => {
   });
 
   function resize() {
+    const mainWrapHeight = document.querySelector('.main-wrapper')?.scrollHeight || 0;
+    const footerWrap = document.querySelector('.main-wrapper-footer')?.scrollHeight || 0;
+    const stickySection = stickyEl.offsetHeight;
+
+    position = mainWrapHeight - footerWrap - stickySection;
+
     // Code for sticky position to keep visibility
     const windowHeight = window.innerHeight;
 
@@ -27,8 +34,6 @@ export const stickySection = () => {
     if (diff < 0) {
       stickyEl.style.top = `${diff}px`;
     }
-
-    position = stickyEl.getBoundingClientRect().top + window.scrollY;
   }
 
   window.addEventListener('resize', () => {
