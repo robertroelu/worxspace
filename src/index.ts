@@ -21,6 +21,7 @@ import { mobileNav } from '$utils/mobileNav';
 import { stickySection } from '$utils/stickySection';
 // import { consoleClear } from '$utils/consoleClear';
 import { actualYear } from '$utils/actualYear';
+import { languageSwitch } from '$utils/languageSwitch';
 // import { typer } from '$utils/typer';
 
 window.Webflow ||= [];
@@ -46,4 +47,5 @@ window.Webflow.push(() => {
     });
 
   stickySection();
+  languageSwitch();
 });
