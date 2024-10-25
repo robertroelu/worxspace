@@ -1,6 +1,8 @@
 export const languageSwitch = () => {
-  const el = document.querySelector('[data-lang="de-DE"]') as HTMLElement;
+  const el = document.querySelectorAll('[data-lang="de-DE"]') as NodeListOf<HTMLElement>;
 
-  el.textContent = 'DE';
-  el.style.opacity = '1';
+  el.forEach((item) => {
+    item.textContent = 'DE';
+    item.style.opacity = '1';
+  });
 };
