@@ -2,10 +2,14 @@ export const stickySection = () => {
   const elScrollFrom = document.querySelectorAll('[scroll-to-partners]') as NodeListOf<HTMLElement>;
   if (!elScrollFrom) return;
 
-  const isHomePage = window.location.pathname === '/';
+  const path = window.location.pathname;
+  const isHomePage = path === '/' || path === '/de';
+  const isGermanSection = path.startsWith('/de');
+
   if (!isHomePage) {
     elScrollFrom.forEach((el) => {
-      el.setAttribute('href', '/#home-partners');
+      const baseUrl = isGermanSection ? '/de' : '/';
+      el.setAttribute('href', `${baseUrl}#home-partners`);
     });
   }
 
