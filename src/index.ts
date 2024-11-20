@@ -23,6 +23,7 @@ import { stickySection } from '$utils/stickySection';
 import { actualYear } from '$utils/actualYear';
 import { languageSwitch } from '$utils/languageSwitch';
 import { createdBy } from '$utils/createdBy';
+import { modifyUrl } from '$utils/modifyUrl';
 // import { typer } from '$utils/typer';
 
 window.Webflow ||= [];
@@ -47,7 +48,8 @@ window.Webflow.push(() => {
       console.error('Error in nestedElement:', error);
     });
 
-  stickySection();
   languageSwitch();
   createdBy();
+  modifyUrl();
+  stickySection();
 });
