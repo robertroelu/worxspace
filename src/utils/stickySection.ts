@@ -1,12 +1,28 @@
 export const stickySection = () => {
-  const stickyEl = document.querySelector('[sticky-section]') as HTMLElement;
-  if (!stickyEl) return;
-
   const elScrollFrom = document.querySelectorAll('[scroll-to-partners]') as NodeListOf<HTMLElement>;
   if (!elScrollFrom) return;
 
+  const isHomePage = window.location.pathname === '/';
+  if (!isHomePage) {
+    elScrollFrom.forEach((el) => {
+      el.setAttribute('href', '/#home-partners');
+    });
+  }
+
+  const stickyEl = document.querySelector('[sticky-section]') as HTMLElement;
+  if (!stickyEl) return;
+
   let position: number;
-  // const document.querySelector('.section_home-partners')?.scrollHeight;
+
+  const checkUrlHash = () => {
+    if (window.location.hash === '#home-partners') {
+      resize();
+      window.scrollTo({
+        top: position,
+        behavior: 'instant',
+      });
+    }
+  };
 
   elScrollFrom.forEach((el) => {
     el.addEventListener('click', () => {
@@ -42,5 +58,9 @@ export const stickySection = () => {
 
   setTimeout(() => {
     resize();
+    checkUrlHash(); // Check hash after initial resize
   }, 500);
+
+  // Listen for hash changes
+  window.addEventListener('hashchange', checkUrlHash);
 };
